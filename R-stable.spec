@@ -4,7 +4,7 @@
 #
 Name     : R-stable
 Version  : 1.1.4
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/stable_1.1.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/stable_1.1.4.tar.gz
 Summary  : Probability Functions and Generalized Regression Models for
@@ -34,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552847870
+export SOURCE_DATE_EPOCH=1552935287
 
 %install
-export SOURCE_DATE_EPOCH=1552847870
+export SOURCE_DATE_EPOCH=1552935287
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
