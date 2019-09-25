@@ -4,19 +4,23 @@
 #
 Name     : R-stable
 Version  : 1.1.4
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/stable_1.1.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/stable_1.1.4.tar.gz
 Summary  : Probability Functions and Generalized Regression Models for
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-stable-lib = %{version}-%{release}
+Requires: R-rmutil
+Requires: R-stabledist
 BuildRequires : R-rmutil
 BuildRequires : R-stabledist
 BuildRequires : buildreq-R
 
 %description
-[![Travis-CI Build Status](https://travis-ci.org/swihart/stable.svg?branch=master)](https://travis-ci.org/swihart/stable) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/stable)](https://cran.r-project.org/package=stable) ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/stable)
+stable variate; generalized regression models for the parameters
+    of a stable distribution. See the README for how to make equivalent calls
+    to those of 'stabledist'. See github for Journal article.
 
 %package lib
 Summary: lib components for the R-stable package.
@@ -33,13 +37,13 @@ lib components for the R-stable package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552935287
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569375144
 
 %install
-export SOURCE_DATE_EPOCH=1552935287
+export SOURCE_DATE_EPOCH=1569375144
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,12 +72,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  stable || :
+R CMD check --no-manual --no-examples --no-codoc stable || :
 
 
 %files
