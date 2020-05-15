@@ -4,7 +4,7 @@
 #
 Name     : R-stable
 Version  : 1.1.4
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/stable_1.1.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/stable_1.1.4.tar.gz
 Summary  : Probability Functions and Generalized Regression Models for
@@ -32,21 +32,22 @@ lib components for the R-stable package.
 
 %prep
 %setup -q -c -n stable
+cd %{_builddir}/stable
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569375144
+export SOURCE_DATE_EPOCH=1589557593
 
 %install
-export SOURCE_DATE_EPOCH=1569375144
+export SOURCE_DATE_EPOCH=1589557593
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
