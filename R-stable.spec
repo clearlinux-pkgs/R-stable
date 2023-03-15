@@ -4,7 +4,7 @@
 #
 Name     : R-stable
 Version  : 1.1.6
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/stable_1.1.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/stable_1.1.6.tar.gz
 Summary  : Probability Functions and Generalized Regression Models for
